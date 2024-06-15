@@ -46,3 +46,31 @@ Where:
 - M: Maximum number of neighbors a point can have to be considered an outlier.
 - K: Number of centers to be computed by MRFFT.
 - L: Number of partitions for the input data.
+
+## FrequentItemsDetection
+
+This code implements two sampling algorithms using Apache Spark Streaming to detect frequent items in a data stream. The implemented methods are:
+
+1. **Reservoir Sampling**: Maintains a representative sample of the data stream.
+2. **Sticky Sampling**: Estimates the frequency of items in the stream using a probabilistic approach.
+
+### Features
+- Utilizes Apache Spark Streaming for real-time data processing.
+- Implements Reservoir Sampling and Sticky Sampling algorithms.
+- Configurable input parameters for flexibility in different streaming environments.
+
+### Usage
+To execute the script, use the following command:
+```bash
+python FrequentItemsDetection.py <n> <phi> <epsilon> <delta> <hostname> <port>
+```
+Where:
+
+- n: Total number of items expected in the data stream.
+- phi: Threshold fraction for identifying frequent items.
+- epsilon: Precision parameter for Sticky Sampling.
+- delta: Probability parameter for Sticky Sampling.
+- hostname: Hostname or IP address where the streaming source is available.
+- port: Port number where the data stream is accessible.
+
+
